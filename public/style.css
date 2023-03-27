@@ -1,0 +1,416 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Epilogue;
+}
+
+@media (min-width:768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+@media (min-width:992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+@media (min-width:1400px) {
+    .container {
+        width: 1370px;
+    }
+}
+
+
+@media (min-width:1700px) {
+    .container {
+        width: 1670px;
+    }
+}
+
+body{
+    background-color: hsl(0, 0%, 98%);
+}
+
+.container{
+    padding: 10px 30px;
+    margin: 0 auto;
+}
+
+header .container{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 25px 30px;
+}
+
+header .container .menu-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: capitalize;
+    width: 100%;
+    position: relative;
+}
+
+header .container .menu-btns .menu{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    font-weight: 500;
+}
+
+header .container .menu-btns .menu li{
+    font-size: 14px;
+    color: hsl(0, 0%, 41%);
+    position: relative;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+header .container .menu-btns .menu :is(li, i):hover{
+    color: hsl(0, 0%, 8%);
+}
+
+header .container .menu-btns .menu li i{
+    font-size: 12px;
+}
+
+header .container .menu-btns .btns :is(.login, .register){
+    font-size: 14px;
+    color: hsl(0, 0%, 41%);
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+header .container .menu-btns .btns .login:hover{
+    color: hsl(0, 0%, 8%);
+}
+
+header .container .menu-btns .btns .register{
+    margin-left: 15px;
+    border: 2px solid hsl(0, 0%, 55%);
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+header .container .menu-btns .btns .register:hover{
+    color: hsl(0, 0%, 8%);
+    border-color: hsl(0, 0%, 8%);
+}
+
+header .container .menu .company-list{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 115px;
+}
+
+header .container .menu :is(.features-list, .company-list){
+    position: absolute;
+    width: 115px;
+    list-style: none;
+    top: 35px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px 20px;
+    cursor: auto;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .1);
+    display: none;
+    transition: all .2s;
+}
+
+header .container .menu .features-list.active{
+    display: block;
+}
+
+header .container .menu .company-list.active{
+    display: flex;
+}
+
+header .container .menu :is(.features-menu > i, .company-menu > i){
+    transform: rotate(0deg);
+    transition: all .5s;
+}
+
+header .container .menu .features-menu > i.active, header .container .menu .company-menu > i.active{
+    transform: rotate(180deg);
+}
+
+
+header .container .menu .features-list li,
+header .container .menu .company-list li{
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    height: 20px;
+    padding: 5px 2px;
+    transition: all .2s;
+}
+
+header .container .menu .features-list li:hover, header .container .menu .company-list li:hover{
+    background-color: hsl(0, 0%, 98%);
+}
+
+header .container .menu .features-list li:not(:last-of-type){
+    margin-bottom: 15px;
+}
+
+header .container .menu .features-list li > span{
+    margin-left: 15px;
+}
+
+header .container .menu .features-list{
+    left: -60px;
+    width: 145px;
+}
+
+header .container .menu .features-list .icon-features-list{
+    width: 16px;
+    height: 16px;
+}
+
+header .container .menu .close{
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 50px;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.overlay{
+    background-color: rgba(0, 0, 0, .75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.overlay.active{
+    display: block;
+}
+
+header .container .menu-icon{
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width:781px){
+    header .container{
+        justify-content: space-between;
+    }
+    header .container .menu-btns{
+        position: fixed;
+        top: 0;
+        flex-direction: column;
+        height: 100%;
+        background-color: white;
+        width: 60%;
+        right: -70%;
+        justify-content: start;
+        align-items: start;
+        gap: 50px;
+        padding: 120px 40px 0;
+        z-index: 20;
+        box-shadow: -5px 0px 15px rgba(0, 0, 0, .1);
+        transition: all .3s;
+    }
+    header .container .menu-btns.active{
+        right: 0;
+    }
+    header .container .menu-icon{
+        display: block;
+    }
+    header .container .menu-btns .menu{
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    header .container .menu-btns .menu li{
+        padding: 14px 5px;
+    }
+    header .container .menu-btns .btns{
+        flex-direction: column;
+        display: flex;
+        gap: 20px;
+        width: 100%;
+    }
+    header .container .menu-btns .btns .register{
+        margin: 0;
+    }
+    header .container .menu :is(.features-list, .company-list){
+        position: relative;
+        left: 0;
+        top: 20px;
+        padding: 0;
+        border-radius: 0;
+        background-color: transparent;
+        width: 100%;
+        box-shadow: none;
+    }
+    header .container .menu :is(.features-list li, .company-list li){
+        height: 25px;
+        padding: 20px 5px;
+    }
+    header .container .menu .close{
+        display: block;
+    }
+    header .container .menu-btns .menu .close:hover{
+        color: hsl(0, 0%, 55%);
+    }
+}
+
+.main .container{
+    padding: 0 145px;
+    display: flex;
+    align-items: center;
+    gap: 130px;
+}
+
+.main .container .image, .main .container .content{
+    width: 48%;
+}
+
+.main .container .image img{
+    width: 90%;
+}
+
+.main .container .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.main .container .content h1{
+    font-size: 95px;
+    font-weight: 700;
+}
+
+.main .container .content .text{
+    color: hsl(0, 0%, 41%);
+    line-height: 1.5;
+    font-weight: 500;
+    padding-right: 150px;
+    font-size: 18px;
+}
+
+.main .container .content .btn-more{
+    width: fit-content;
+    padding: 15px 25px;
+    font-size: 17px;
+    border: none;
+    background-color: hsl(0, 0%, 8%);
+    border: 1px solid hsl(0, 0%, 8%);
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.main .container .content .btn-more:hover{
+    background-color: transparent;
+    color: hsl(0, 0%, 8%);
+    border: 1px solid hsl(0, 0%, 8%);
+}
+
+.main .container .content .ads{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.main .container .image .hero-mobile{
+    display: none;
+}
+
+@media (max-width:1700px){
+    .main .container .content h1 {
+        font-size: 70px;
+    }
+    .main .container .content .text {
+        padding: 0;
+    }
+}
+
+@media (max-width:1400px){
+    .main .container .content h1 {
+        font-size: 50px;
+    }
+    .main .container {
+        gap: 70px;
+        padding: 0 90px;
+    }
+    .main .container .content {
+        gap: 10px;
+    }
+    .main .container .content .text {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width:992px) {
+    .main .container {
+        padding: 0 50px;
+    }
+    .main .container .content h1 {
+        font-size: 45px;
+    }
+    .main .container .content .text {
+        font-size: 16px;
+    }
+    .main .container {
+        gap: 15px;
+    }
+    .main .container .ads > img{
+        width: 70px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:768px) {
+    .main .container{
+        flex-direction: column-reverse;
+        padding: 0;
+    }
+    .main .container :is(.content, .image){
+        width: 100%;
+        text-align: center;
+    }
+    .main .container .content .btn-more{
+        margin: 0 auto;
+    }
+    .main .container .content .text {
+        margin: 10px 0;
+    }
+    .main .container .image .hero-mobile{
+        display: block;
+    }
+    .main .container .image .hero-desktop{
+        display: none;
+    }
+    .main .container .image img {
+        width: 100%;
+    }
+    .main .container .content h1 {
+        font-size: 36px;
+    }
+    .main .container .content{
+        padding: 40px 20px;
+    }
+}
