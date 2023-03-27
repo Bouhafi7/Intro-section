@@ -217,8 +217,8 @@ header .container .menu-icon{
         flex-direction: column;
         height: 100%;
         background-color: white;
-        width: 60%;
-        right: -70%;
+        width: 80%;
+        right: -100%;
         justify-content: start;
         align-items: start;
         gap: 50px;
